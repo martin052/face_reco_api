@@ -21,7 +21,7 @@ const db = require('knex')({
         port: 5432,
         user: 'postgresdata_rsx6_user',
         password: 'INpgwGHOnFydwhv9pPeMUP066ydpok6D',
-        database: 'postgresdata_rsx6'
+        database: 'postgres://postgresdata_rsx6_user:INpgwGHOnFydwhv9pPeMUP066ydpok6D@dpg-cikroc15rnuvtgrauuvg-a/postgresdata_rsx6'
     }
 });
 
