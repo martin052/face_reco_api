@@ -21,7 +21,7 @@ const db = require('knex')({
         port: 5432,
         user: 'martin',
         password: '',
-        database: 'smart-brain'
+        database: 'postgresdata_rsx6'
     }
 });
 
