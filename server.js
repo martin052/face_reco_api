@@ -14,14 +14,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
-const db = require('knex')({
+// const db = require('knex')({
+//     client: 'pg',
+//     connection: {
+//         host: 'dpg-cikroc15rnuvtgrauuvg-a',
+//         port: 5432,
+//         user: 'postgresdata_rsx6_user',
+//         password: 'INpgwGHOnFydwhv9pPeMUP066ydpok6D',
+//         database: 'postgres://postgresdata_rsx6_user:INpgwGHOnFydwhv9pPeMUP066ydpok6D@dpg-cikroc15rnuvtgrauuvg-a/postgresdata_rsx6'
+//     }
+// });
+
+const db = knex({
     client: 'pg',
     connection: {
-        host: 'dpg-cikroc15rnuvtgrauuvg-a',
-        port: 5432,
-        user: 'postgresdata_rsx6_user',
-        password: 'INpgwGHOnFydwhv9pPeMUP066ydpok6D',
-        database: 'postgres://postgresdata_rsx6_user:INpgwGHOnFydwhv9pPeMUP066ydpok6D@dpg-cikroc15rnuvtgrauuvg-a/postgresdata_rsx6'
+        connectionString: process.env.DATABASE_URL,
+        ssl: true,
     }
 });
 
