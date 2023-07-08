@@ -1,4 +1,5 @@
 // const Clarifai = require('clarifai');
+const fetch = require('node-fetch');
 const returnClarifaiRequestOptions = (imageUrl) => {
     const USER_ID = 'martin0521992';//(the code by your name)
     const PAT = '0f7e8cf552b142229f8f2332f504919b';//(your Clarifai api key)
