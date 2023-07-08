@@ -17,10 +17,10 @@ app.use(cors());
 const db = require('knex')({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
+        host: 'dpg-cikroc15rnuvtgrauuvg-a',
         port: 5432,
-        user: 'martin',
-        password: '',
+        user: 'postgresdata_rsx6_user',
+        password: 'INpgwGHOnFydwhv9pPeMUP066ydpok6D',
         database: 'postgresdata_rsx6'
     }
 });
