@@ -2,9 +2,9 @@
   "name": "scri",
   "version": "1.0.0",
   "description": "",
-  "main": "nodemon.js",
+  "main": "script.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
