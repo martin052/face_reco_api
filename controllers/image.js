@@ -33,6 +33,7 @@ const returnClarifaiRequestOptions = (imageUrl) => {
 };
 
 const handleApiCall = (req, res, axios) => {
+    const axios = require('axios');
     console.log("imageurl: ", req.body.input)
     axios.post("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs",
         {}, returnClarifaiRequestOptions(req.body.input))
