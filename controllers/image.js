@@ -1,5 +1,5 @@
 // const Clarifai = require('clarifai');
-const axios = require('axios');
+// const axios = require('axios');
 const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '5e026c5fae004ed4a83263ebaabec49e';
 const returnClarifaiRequestOptions = (imageUrl) => {
