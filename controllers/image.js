@@ -1,20 +1,6 @@
 // const Clarifai = require('clarifai');
-const IMAGE_URL = req.body.id;
-const raw = {
-    "user_app_id": {
-        "user_id": 'martin0521992',
-        "app_id": 'Face_detect'
-    },
-    "inputs": [
-        {
-            "data": {
-                "image": {
-                    "url": IMAGE_URL
-                }
-            }
-        }
-    ]
-};
+const axios = require('axios');
+
 
 // const MODEL_ID = 'face-detection';
 // const MODEL_VERSION_ID = '5e026c5fae004ed4a83263ebaabec49e';
@@ -49,6 +35,22 @@ const raw = {
 // };
 
 const handleApiCall = (req, res) => {
+    const IMAGE_URL = req.body.id;
+    const raw = {
+        "user_app_id": {
+            "user_id": 'martin0521992',
+            "app_id": 'Face_detect'
+        },
+        "inputs": [
+            {
+                "data": {
+                    "image": {
+                        "url": IMAGE_URL
+                    }
+                }
+            }
+        ]
+    };
     axios.post("https://api.clarifai.com/v2/models/face-detection/versions/45fb9a671625463fa646c3523a3087d5/outputs",
         raw,
         {
