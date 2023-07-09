@@ -32,9 +32,8 @@ const handleApiCall = (req, res, axios) => {
     console.log("imageurl: ", req.body.input)
     axios.post("https://api.clarifai.com/v2/models/face-detection/outputs", returnClarifaiRequestOptions(req.body.input))
         .then(response => {
-            console.log(response); // Log the response object
-            const data = response.data;
-            res.json(data);
+            console.log(response.data); // Log the response data
+            res.json(response.data); // Send the response data to the client
         })
         .catch(err => {
             console.log(err);
