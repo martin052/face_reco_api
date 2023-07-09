@@ -35,6 +35,7 @@ const axios = require('axios');
 // };
 
 const handleApiCall = (req, res) => {
+    const PAT = '0f7e8cf552b142229f8f2332f504919b';
     const IMAGE_URL = req.body.id;
     const raw = {
         "user_app_id": {
