@@ -6,8 +6,9 @@ const returnClarifaiRequestOptions = (imageUrl) => {
     const USER_ID = 'martin0521992';//(the code by your name)
     const PAT = '0f7e8cf552b142229f8f2332f504919b';//(your Clarifai api key)
     const APP_ID = 'Face_detect';//(what you named your app in Clarifai)
+    const IMAGE_URL = encodeURIComponent('https://images.newscientist.com/wp-content/uploads/2022/02/14174128/PRI_223554170.jpg?crop=4:3,smart&width=1200&height=900&upscale=true');
 
-    const IMAGE_URL = imageUrl;
+    // const IMAGE_URL = imageUrl;
 
 
     // const IMAGE_URL = this.state.input;
