@@ -6,6 +6,8 @@ const returnClarifaiRequestOptions = (imageUrl) => {
     const MODEL_ID = 'face-detection';
     const MODEL_VERSION_ID = '5e026c5fae004ed4a83263ebaabec49e';
     const IMAGE_URL = imageUrl;
+    const axios = require('axios');
+
     // const IMAGE_URL = this.state.input;
     const raw = JSON.stringify({
         "user_app_id": {
