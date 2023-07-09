@@ -40,7 +40,7 @@ const handleApiCall = (req, res) => {
     const raw = {
         "user_app_id": {
             "user_id": 'martin0521992',
-            "app_id": 'myapp'
+            "app_id": 'my-first-application'
         },
         "inputs": [
             {
