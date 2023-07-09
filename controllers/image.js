@@ -52,7 +52,7 @@ const handleApiCall = (req, res) => {
             }
         ]
     };
-    axios.post("https://api.clarifai.com/v2/models/face-detection/versions/45fb9a671625463fa646c3523a3087d5/outputs",
+    axios.post("https://api.clarifai.com/v2/models/face-detection/versions/5e026c5fae004ed4a83263ebaabec49e/outputs",
         raw,
         {
             headers: {
