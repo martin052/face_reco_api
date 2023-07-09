@@ -38,10 +38,6 @@ const handleApiCall = (req, res) => {
     const PAT = '0f7e8cf552b142229f8f2332f504919b';
     const IMAGE_URL = req.body.id;
     const raw = {
-        "user_app_id": {
-            "user_id": 'martin0521992',
-            "app_id": 'my-first-application'
-        },
         "inputs": [
             {
                 "data": {
@@ -56,20 +52,17 @@ const handleApiCall = (req, res) => {
         raw,
         {
             headers: {
-                'Accept': 'application/json',
+                'Content-Type': 'application/json',
                 'Authorization': 'Key ' + PAT
             }
         }
     )
         .then(response => {
             res.json(response.data)
-
         })
-        .catch(err => res.status(400).json('unable to work with api'))
-    // .then(response => response.json())
-    // .then(data => res.json(data))
-    // .catch(err => res.status(400).json('unable to work with api'))
+        .catch(err => res.status(400).json('unable to work with API'));
 }
+
 
 const handleImage = (req, res, db) => {
     const { id } = req.body;
