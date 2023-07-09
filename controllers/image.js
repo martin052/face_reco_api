@@ -3,8 +3,8 @@ const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '5e026c5fae004ed4a83263ebaabec49e';
 const returnClarifaiRequestOptions = (imageUrl) => {
     const USER_ID = 'martin0521992';//(the code by your name)
-    const PAT = '0f7e8cf552b142229f8f2332f504919b';//(your Clarifai api key)
-    const APP_ID = 'myapp';//(what you named your app in Clarifai)
+    const PAT = '120713bdf3e340fe9047a97b408a1aea';//(your Clarifai api key)
+    const APP_ID = 'Face_detect';//(what you named your app in Clarifai)
 
     const IMAGE_URL = imageUrl;
 
