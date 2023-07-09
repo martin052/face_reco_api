@@ -58,10 +58,15 @@ const handleApiCall = (req, res) => {
         }
     )
         .then(response => {
-            res.json(response.data)
+            console.log('Clarifai API response:', response.data);
+            res.json(response.data);
         })
-        .catch(err => res.status(400).json('unable to work with API'));
+        .catch(err => {
+            console.log('Clarifai API error:', err);
+            res.status(400).json('unable to work with API');
+        });
 }
+
 
 
 const handleImage = (req, res, db) => {
