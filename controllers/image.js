@@ -30,10 +30,18 @@ const returnClarifaiRequestOptions = (imageUrl) => {
 
 const handleApiCall = (req, res, axios) => {
     console.log("imageurl: ", req.body.input)
-    axios.post("https://api.clarifai.com/v2/models/" + 'face-detection' + "/outputs", returnClarifaiRequestOptions(req.body.input))
-        .then(response => response.json())
-        .then(data => res.json(data))
-        .catch(err => res.status(400).json('unable to work with api'))
+    axios.post("https://api.clarifai.com/v2/models/face-detection/outputs", returnClarifaiRequestOptions(req.body.input))
+        .then(response => {
+            const data = response.data;
+            res.json(data);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(400).json('Unable to work with the API');
+        });
+    // .then(response => response.json())
+    // .then(data => res.json(data))
+    // .catch(err => res.status(400).json('unable to work with api'))
 }
 
 const handleImage = (req, res, db) => {
