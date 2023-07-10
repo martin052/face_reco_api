@@ -16,7 +16,7 @@ const db = require('knex')({
     connection: {
         connectionString: process.env.DATABASE_URL,
         ssl: true,
-    },
+    }
 });
 
 // Allow requests from specific origin
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 // SIGNIN (post, pw over HTTP body)
 app.post('/signin', (req, res) => {
-    signin.handleSignIn(req, res, db, bcrypt);
+    signin.handleSignin(req, res, db, bcrypt);
 });
 
 // REGISTER (post, add to database)
