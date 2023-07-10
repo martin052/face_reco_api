@@ -31,11 +31,11 @@ const handleApiCall = (req, res) => {
         )
         .then(response => {
             console.log('Clarifai API response:', response.data);
-            res.json(response.data);
+            res.json(response.data)
         })
         .catch(err => {
             console.log('Clarifai API error:', err);
-            res.status(400).json('Unable to work with the API');
+            res.status(400).json('Unable to work with the API')
         });
 };
 

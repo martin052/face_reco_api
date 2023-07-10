@@ -19,38 +19,32 @@ const db = require('knex')({
     }
 });
 
-// Allow requests from specific origin
-const corsOptions = {
-    origin: 'https://myfacerecognitionweb.onrender.com',
-};
+// // Allow requests from specific origin
+// const corsOptions = {
+//     origin: 'https://myfacerecognitionweb.onrender.com',
+// };
 
-// Enable CORS for all routes
-app.use(cors(corsOptions));
+// // Enable CORS for all routes
+// app.use(cors(corsOptions));
 
-app.get('/', (req, res) => {
-    res.send('Success');
-});
+//ROOT
+app.get('/', (req, res) => { res.send("Success") })
 
-app.post('/signin', (req, res) => {
-    signin.handleSignin(req, res, db, bcrypt);
-});
+//SIGNIN (post, pw over HTTP body)
+app.post('/signin', (req, res) => { signin.handleSignIn(req, res, db, bcrypt) });
 
-app.post('/register', (req, res) => {
-    register.handleRegister(req, res, db, bcrypt);
-});
+//REGISTER (post, add to database)
+app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) });
 
-app.get('/profile/:id', (req, res) => {
-    profile.handleProfile(req, res, db);
-});
+//PROFILE (get user)
+app.get('/profile/:id', (req, res, db) => { profile.handleProfileGet(req, res, db) });
 
-app.put('/image', (req, res) => {
-    image.handleImage(req, res, db);
-});
+//IMAGE (put, update count on user profile)
+app.put('/image', (req, res) => { image.handleImage(req, res, db) });
 
-app.post('/imageurl', (req, res) => {
-    image.handleApiCall(req, res);
-});
+//IMAGEURL (post, handle Face Recognition API from backend)
+app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`app is running on port ${process.env.PORT}`);
-});
+})
