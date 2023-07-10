@@ -2,7 +2,8 @@ const express = require('express');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const register = require('./controllers/register');
-const signin = require('./controllers/signin');
+const { handleSignin } = require('./controllers/signin');
+
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
@@ -31,7 +32,8 @@ const db = require('knex')({
 app.get('/', (req, res) => { res.send("Success") })
 
 //SIGNIN (post, pw over HTTP body)
-app.post('/signin', (req, res) => { signin.handleSignIn(req, res, db, bcrypt) });
+app.post('/signin', (req, res) => { handleSignin(req, res, db, bcrypt) });
+
 
 //REGISTER (post, add to database)
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) });
