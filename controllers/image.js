@@ -36,7 +36,7 @@ const axios = require('axios');
 
 const handleApiCall = (req, res) => {
     const PAT = '0f7e8cf552b142229f8f2332f504919b';
-    const IMAGE_URL = req.body.id;
+    const IMAGE_URL = req.body.image; // Update to use 'image' instead of 'id'
     const raw = {
         "inputs": [
             {
@@ -48,7 +48,8 @@ const handleApiCall = (req, res) => {
             }
         ]
     };
-    axios.post("https://api.clarifai.com/v2/models/face-detection/versions/5e026c5fae004ed4a83263ebaabec49e/outputs",
+    axios.post(
+        "https://api.clarifai.com/v2/models/face-detection/versions/5e026c5fae004ed4a83263ebaabec49e/outputs",
         raw,
         {
             headers: {
@@ -65,7 +66,8 @@ const handleApiCall = (req, res) => {
             console.log('Clarifai API error:', err);
             res.status(400).json('unable to work with API');
         });
-}
+};
+
 
 
 
