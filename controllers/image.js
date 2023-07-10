@@ -11,20 +11,21 @@ const handleApiCall = (req, res) => {
     const IMAGE_URL = input;
 
     const raw = JSON.stringify({
-        "user_app_id": {
-            "user_id": USER_ID,
-            "app_id": APP_ID
+        user_app_id: {
+            user_id: USER_ID,
+            app_id: APP_ID,
         },
-        "inputs": [
+        inputs: [
             {
-                "data": {
-                    "image": {
-                        "url": IMAGE_URL
-                    }
-                }
-            }
-        ]
+                data: {
+                    image: {
+                        url: IMAGE_URL,
+                    },
+                },
+            },
+        ],
     });
+
 
 
     axios.post(`https://api.clarifai.com/v2/models/${MODEL_ID}/versions/${MODEL_VERSION_ID}/outputs`, raw, {
