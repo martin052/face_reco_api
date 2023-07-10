@@ -36,8 +36,12 @@ const axios = require('axios');
 
 const handleApiCall = (req, res) => {
     const PAT = '4d99b5e10ec64aabb3220b963707a62f';
-    const IMAGE_URL = req.body.image; // Update to use 'image' instead of 'id'
+    const IMAGE_URL = req.body.id;
     const raw = {
+        "user_app_id": {
+            "user_id": 'martin0521992',
+            "app_id": 'face_reco'
+        },
         "inputs": [
             {
                 "data": {
