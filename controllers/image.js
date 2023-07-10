@@ -10,7 +10,7 @@ const handleApiCall = (req, res) => {
 
     const IMAGE_URL = input;
 
-    const raw = {
+    const raw = JSON.stringify({
         "user_app_id": {
             "user_id": USER_ID,
             "app_id": APP_ID
@@ -24,7 +24,8 @@ const handleApiCall = (req, res) => {
                 }
             }
         ]
-    };
+    });
+
 
     axios.post(`https://api.clarifai.com/v2/models/${MODEL_ID}/versions/${MODEL_VERSION_ID}/outputs`, raw, {
         headers: {
