@@ -19,13 +19,13 @@ const db = require('knex')({
     }
 });
 
-// // Allow requests from specific origin
-// const corsOptions = {
-//     origin: 'https://myfacerecognitionweb.onrender.com',
-// };
+// Allow requests from specific origin
+const corsOptions = {
+    origin: 'https://myfacerecognitionweb.onrender.com',
+};
 
-// // Enable CORS for all routes
-// app.use(cors(corsOptions));
+// Enable CORS for all routes
+app.use(cors(corsOptions));
 
 //ROOT
 app.get('/', (req, res) => { res.send("Success") })
