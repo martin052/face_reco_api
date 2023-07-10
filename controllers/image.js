@@ -20,7 +20,7 @@ const handleApiCall = (req, res) => {
     };
     axios
         .post(
-            'https://api.clarifai.com/v2/models/face-detection/versions/45fb9a671625463fa646c3523a3087d5/outputs',
+            'https://api.clarifai.com/v2/models/face-detection/versions/5e026c5fae004ed4a83263ebaabec49e/outputs',
             raw,
             {
                 headers: {
@@ -31,11 +31,11 @@ const handleApiCall = (req, res) => {
         )
         .then(response => {
             console.log('Clarifai API response:', response.data);
-            res.json(response.data)
+            res.json(response.data);
         })
         .catch(err => {
             console.log('Clarifai API error:', err);
-            res.status(400).json('Unable to work with the API')
+            res.status(400).json('Unable to work with the API');
         });
 };
 
