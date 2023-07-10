@@ -4,8 +4,7 @@ const returnClarifaiRequestOptions = (imageUrl) => {
     const USER_ID = 'martin0521992';//(the code by your name)
     const PAT = '0f7e8cf552b142229f8f2332f504919b';//(your Clarifai api key)
     const APP_ID = 'Face_detect';//(what you named your app in Clarifai)
-    const MODEL_ID = 'face-detection';
-    const MODEL_VERSION_ID = '5e026c5fae004ed4a83263ebaabec49e';
+
     const IMAGE_URL = imageUrl;
 
 
@@ -30,7 +29,8 @@ const returnClarifaiRequestOptions = (imageUrl) => {
     console.log(requestOptions);
     return requestOptions;
 };
-
+const MODEL_ID = 'face-detection';
+const MODEL_VERSION_ID = '5e026c5fae004ed4a83263ebaabec49e';
 const handleApiCall = (req, res, axios) => {
     console.log("imageurl: ", req.body.input)
     axios.post("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", returnClarifaiRequestOptions(req.body.input))
