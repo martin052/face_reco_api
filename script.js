@@ -5,8 +5,11 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
-
+const bodyParser = require('body-parser');
 const app = express();
+app.use(bodyParser.json());
+app.use(cors());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -39,7 +42,7 @@ app.post('/register', (req, res) => {
     register.handleRegister(req, res, db, bcrypt);
 });
 
-app.get('/profile/:id', (req, res) => {
+app.get('/profile/:id', (req, res, db) => {
     profile.handleProfile(req, res, db);
 });
 
