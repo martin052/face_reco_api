@@ -38,7 +38,7 @@ const handleApiCall = (req, res) => {
     const IMAGE_URL = req.body.id;
     const raw = {
         "user_app_id": {
-            "user_id": 'fmartin0521992',
+            "user_id": 'martin0521992',
             "app_id": 'Face_detect'
         },
         "inputs": [
@@ -53,7 +53,7 @@ const handleApiCall = (req, res) => {
     };
 
 
-    axios.post("https://api.clarifai.com/v2/models/face-detection/versions/45fb9a671625463fa646c3523a3087d5/outputs",
+    axios.post("https://api.clarifai.com/v2/models/face-detection/versions/6dc7e46bc9124c5c8824be4822abe105/outputs",
         raw,
         {
             headers: {
