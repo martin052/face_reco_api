@@ -34,12 +34,12 @@ const axios = require('axios');
 //     console.log("imageurl: ", req.body.input)
 //     axios.post("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", returnClarifaiRequestOptions(req.body.input))
 const handleApiCall = (req, res) => {
-    const PAT = '63d9310bff304a7486be5471c990b3fc';
+    const PAT = '0f7e8cf552b142229f8f2332f504919b';
     const IMAGE_URL = req.body.id;
     const raw = {
         "user_app_id": {
-            "user_id": 'nessabyte',
-            "app_id": 'my-first-application'
+            "user_id": 'fmartin0521992',
+            "app_id": 'Face_detect'
         },
         "inputs": [
             {
